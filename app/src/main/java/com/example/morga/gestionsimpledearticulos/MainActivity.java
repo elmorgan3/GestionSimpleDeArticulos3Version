@@ -1,23 +1,11 @@
 package com.example.morga.gestionsimpledearticulos;
 
 import android.app.Activity;
-import android.app.ListActivity;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.AdapterView;
 
-import android.app.ListActivity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-
-import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -27,6 +15,7 @@ public class MainActivity extends Activity {
     private static final int ACTIVITY_TASK_ADD = 1;
     private static final int ACTIVITY_ICON = 2;
     private static final int ACTIVITY_MOVIMIENTOS= 3;
+    private static final int ACTIVITY_CLIMA= 4;
 
     private long idActual;
 
@@ -35,6 +24,7 @@ public class MainActivity extends Activity {
     Button btnCrear;
     Button btnListadoConBotones;
     Button btnMovimientos;
+    Button btnClima;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +32,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         btnListaCompleta= (Button)findViewById(R.id.buttonListadoCompleto);
-        btnListadoFiltro = (Button) findViewById(R.id.buttonListadoFiltrado);
+
         btnCrear = (Button)findViewById(R.id.buttonCrearArticulo);
         btnListadoConBotones = (Button)findViewById(R.id.buttonListadoConBotones);
         btnMovimientos = (Button)findViewById(R.id.buttonMovimientos);
+        btnClima = (Button)findViewById(R.id.buttonClima);
     }
 
     //******
@@ -59,15 +50,7 @@ public class MainActivity extends Activity {
         startActivityForResult(i, ACTIVITY_SIMPLE);
     }
 
-    //******
-    //Metodo para abrir la activity con el listado con filtro
-    //******
-    public void mostrarListaFiltrada(View v)
-    {
-        Intent i = new Intent(this, ListaFiltradaActivity.class);
 
-        startActivityForResult(i, ACTIVITY_FILTER);
-    }
 
     //******
     //Metodo para abrir la activity para crear articulo
@@ -105,6 +88,17 @@ public class MainActivity extends Activity {
         Intent i = new Intent(this, ListaMovimientosActivity.class);
 
         startActivityForResult(i, ACTIVITY_MOVIMIENTOS);
+
+    }
+
+    //******
+    //Metodo para abrir la activity con el listado completo con iconos
+    //******
+    public void MostrarClima (View v)
+    {
+        Intent i = new Intent(this, ListaCiudadActivity.class);
+
+        startActivityForResult(i, ACTIVITY_CLIMA);
 
     }
 

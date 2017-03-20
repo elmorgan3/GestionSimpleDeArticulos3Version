@@ -37,6 +37,11 @@ public class ArticuloDataSource {
     public static final String MOVIMIENTO_CANTIDAD = "cantidad";
     public static final String MOVIMIENTO_TIPO = "tipo";
 
+    public static final String TABLE_CIUDADES = "ciudades";
+    public static final String CIUDAD_ID = "_id";
+    public static final String CIUDAD_NOMBRE = "nombre";
+
+
     //Constructor
     public ArticuloDataSource(Context context)
     {
@@ -81,6 +86,9 @@ public class ArticuloDataSource {
         return dbW.insert(TABLE_ARTICULOS, null, values);
     }
 
+    //*****
+    // Funcion para insertar un monumento
+    //*****
     public long insertMovimiento (String codigo, String fecha, float cantidad, String tipo)
     {
         //Ponemos los valores que seran insertados en la bbdd
@@ -91,11 +99,24 @@ public class ArticuloDataSource {
         values.put(MOVIMIENTO_CANTIDAD, cantidad);
         values.put(MOVIMIENTO_TIPO, tipo);
 
-
-
         //Insertamos el Articulo
         return dbW.insert(TABLE_MOVIMIENTOS, null, values);
     }
+
+    //*****
+    // Funcion para añadir una ciudad
+    //*****
+    public long InsertCiudad (String nombre)
+    {
+        //Ponemos los valores que seran insertados en la bbdd
+        ContentValues values = new ContentValues();
+
+        values.put(CIUDAD_NOMBRE, nombre);
+
+        //Insertamos la CIUDAD
+        return dbW.insert(TABLE_CIUDADES, null, values);
+    }
+
 
 
     //*********
@@ -143,6 +164,15 @@ public class ArticuloDataSource {
     {
         return dbR.query(TABLE_MOVIMIENTOS, new String[] {MOVIMIENTO_ID, MOVIMIENTO_CODIGO, MOVIMIENTO_DIA, MOVIMIENTO_CANTIDAD, MOVIMIENTO_TIPO},
                 null, null,null,null, MOVIMIENTO_ID);
+    }
+
+    //**********
+    // Funciion que retorna todas las ciudades de la bbdd en un cursor
+    //**********
+    public Cursor getAllCiudades()
+    {
+        return dbR.query(TABLE_CIUDADES, new String[] {CIUDAD_ID, CIUDAD_NOMBRE},
+                null, null,null,null, CIUDAD_ID);
     }
 
     //busquem una row per la seu codi

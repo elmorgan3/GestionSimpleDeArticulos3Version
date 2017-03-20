@@ -18,42 +18,43 @@
         android:layout_height="30dp" />
 
     <Button
-        android:text="Listado con filtro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonListadoFiltrado"
-        android:onClick="mostrarListaFiltrada" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
-
-    <Button
-        android:text="Crear Articulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonCrearArticulo"
-        android:onClick="crearArticulo" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="crearArticulo"
+        android:text="Crear Articulo" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="30dp" />
 
     <Button
-        android:text="Listado con botones"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonListadoConBotones"
-        android:onClick="mostrarListadoConBotones" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mostrarListadoConBotones"
+        android:text="Listado con botones" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="30dp" />
 
     <Button
-        android:text="Ver movimientos"
+        android:id="@+id/buttonMovimientos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonMovimientos"
-        android:onClick="mostrarListadoMovimientos" />
+        android:onClick="mostrarListadoMovimientos"
+        android:text="Ver movimientos" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/buttonClima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="MostrarClima"
+        android:text="Ver clima" />
+
 </LinearLayout>

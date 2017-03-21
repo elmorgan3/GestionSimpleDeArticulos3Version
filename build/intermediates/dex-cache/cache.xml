@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos3Version\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ae0cd25c6ec7ceaf4f9ec689141b5f4d1c7e5d74">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos3Version\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ebece4f3f18536da9789572fada962a8545731d9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos3Version\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\morga\Desktop\Actividades_Android\GestionSimpleDeArticulos3Version\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_caf53e49bdb2ffa2f83bd56bd2835c615c83720e\classes.dex" />
+    </item>
+
+</items>

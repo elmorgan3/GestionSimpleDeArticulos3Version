@@ -66,6 +66,8 @@ public class ArticuloDataSource {
         dbR.close();
     }
 
+
+
     //*********
     //Funcion para insertar un Articulo
     //*********
@@ -145,7 +147,6 @@ public class ArticuloDataSource {
         // Eliminem la Articulo amb clau primària "id"
         dbW.delete(TABLE_ARTICULOS, ARTICULO_ID + " = ?", new String[] { String.valueOf(id) });
     }
-
 
 
     //**********
@@ -289,21 +290,15 @@ public class ArticuloDataSource {
     }
 
 
+    // ******************
+    // Funcions que retornen cursors de Ciudades
+    // ******************
+    public Cursor Ciudades() {
+        // Retorem totes les tasques
+        return dbR.query(TABLE_CIUDADES, new String[]{CIUDAD_ID, CIUDAD_NOMBRE},
+                null, null,
+                null, null, CIUDAD_ID);
+    }
 
-
-    //*****
-    //*****
-    //Funciones para ENTRA Y SALIDA DE MOVIMIENTOS
-    //*****
-    //*****
-//    public Cursor NuevoMovimientoDeArticulo(long id)
-//    {
-//        // Retorna un cursor només amb el id indicat
-//        // Retornem les tasques que el camp DONE = 1
-//        return dbR.query(TABLE_MOVIMIENTOS, new String[] { MOVIMIENTO_ID, MOVIMIENTO_CODIGO, MOVIMIENTO_DIA ,MOVIMIENTO_CANTIDAD, MOVIMIENTO_TIPO},
-//                MOVIMIENTO_ID+ "=?", new String[]{String.valueOf(id)},
-//                null, null, null);
-//
-//    }
 
 }

@@ -23,7 +23,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListaMovimientosActivity" />
         <activity android:name=".EntradaOSalidaActivity" />
-        <activity android:name=".ListaCiudadActivity"></activity>
+        <activity android:name=".ListaCiudadActivity" />
+        <activity android:name=".AddCityActivity"></activity>
     </application>
 
 </manifest>

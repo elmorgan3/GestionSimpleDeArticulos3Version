@@ -1,19 +1,35 @@
 package com.example.morga.gestionsimpledearticulos;
 
+import android.app.Dialog;
 import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.preference.PreferenceActivity;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLEncoder;
+
+import cz.msebera.android.httpclient.Header;
 
 public class ListaCiudadActivity extends ListActivity {
 
     private static int ACTIVITY_CIUDAD_ADD = 1;
-    private static int ACTIVITY_CIUDAD_UPDATE = 2;
+    private static int ACTIVITY_CIUDAD_SHOW = 2;
 
     private ArticuloDataSource bd;
     private long idActual;
@@ -93,7 +109,26 @@ public class ListaCiudadActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        // modifiquem el id
-        //UpdateCity(id);
+        //Miro la posicion en el cursor del elemento que me han clicado y le
+        // digo que me guarde atributo que se llame "nombre"
+        Cursor linia = (Cursor) scCiudad.getItem(position);
+        String nombreCiudad = linia.getString(linia.getColumnIndexOrThrow("nombre"));
+
+        //String nombreCiudad = ArticuloDataSource.CIUDAD_NOMBRE;
+        //EnviarPeticion(nombreCiudad);
+
+        Bundle bundle = new Bundle();
+        bundle.putLong("id",id);
+        bundle.putString("nombreCiudad", nombreCiudad);
+
+        idActual = id;
+
+        Intent i = new Intent(this, MostrarClimaActivity.class );
+        i.putExtras(bundle);
+        startActivityForResult(i,ACTIVITY_CIUDAD_SHOW);
+
     }
+
+
+
 }

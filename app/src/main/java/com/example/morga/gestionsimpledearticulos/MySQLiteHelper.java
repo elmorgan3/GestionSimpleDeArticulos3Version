@@ -41,9 +41,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper
     String sqlInsertLleida = "INSERT INTO ciudades (nombre)" +
             "VALUES ('Girona')";;
     String sqlInsertGirona = "INSERT INTO ciudades (nombre)" +
-            "VALUES ('Lleida')";;
+            "VALUES ('Lleida')";
     String sqlInsertTarragona = "INSERT INTO ciudades (nombre)" +
-            "VALUES ('Tarragona')";;
+            "VALUES ('Tarragona')";
 
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

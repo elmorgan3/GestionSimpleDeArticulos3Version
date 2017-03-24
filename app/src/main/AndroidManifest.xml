@@ -24,7 +24,9 @@
         <activity android:name=".ListaMovimientosActivity" />
         <activity android:name=".EntradaOSalidaActivity" />
         <activity android:name=".ListaCiudadActivity" />
-        <activity android:name=".AddCityActivity"></activity>
+        <activity android:name=".AddCityActivity" />
+        <activity android:name=".MostrarClimaActivity"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

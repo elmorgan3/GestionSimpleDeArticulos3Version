@@ -167,14 +167,6 @@ public class ArticuloDataSource {
                 null, null,null,null, MOVIMIENTO_ID);
     }
 
-    //**********
-    // Funciion que retorna todas las ciudades de la bbdd en un cursor
-    //**********
-    public Cursor getAllCiudades()
-    {
-        return dbR.query(TABLE_CIUDADES, new String[] {CIUDAD_ID, CIUDAD_NOMBRE},
-                null, null,null,null, CIUDAD_ID);
-    }
 
     //busquem una row per la seu codi
     public Cursor historicoCodigo(String codigo) {
